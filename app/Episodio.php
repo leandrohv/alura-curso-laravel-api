@@ -12,11 +12,17 @@ class Episodio extends Model
     protected $fillable = [
         'temporada',
         'numero',
-        'assistido'
+        'assistido',
+        'serie_id'
     ];
 
     public function serie()
     {
         return $this->belongsTo(Serie::class);
+    }
+
+    public function getAssistidoAttribute($assistido): bool
+    {
+        return $assistido;
     }
 }

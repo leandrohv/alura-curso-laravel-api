@@ -15,4 +15,9 @@ class Serie extends Model
     {
         return $this->hasMany(Episodio::class);
     }
+
+    public function getNomeAttribute($nome): string
+    {
+        return mb_strtoupper($nome);
+    }
 }
